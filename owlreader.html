@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Owlreader byMA – Mein Auftritt</title>
+<meta name="description" content="Owlreader byMA – Hörbücher hören und E-Books vorlesen lassen, mit natürlicher Sprachausgabe und Sleep-Timer. 3 Monate kostenlos, danach einmalig.">
+</head>
+<body>
+<style>
+  :root{
+    --paper:#F6F2E9;
+    --ink:#1B1B18;
+    --ink-soft:#5B5750;
+    --line:#DDD5C4;
+    --accent:#C9612B;
+    --accent-ink:#FFF7EE;
+    --sage:#4E6B5C;
+    --card:#FFFFFF;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#15140F;--ink:#F2EEE3;--ink-soft:#B8B0A0;--line:#332F26;
+      --accent:#E8873E;--accent-ink:#1B1206;--sage:#7FA08D;--card:#1D1B14;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#15140F;--ink:#F2EEE3;--ink-soft:#B8B0A0;--line:#332F26;
+    --accent:#E8873E;--accent-ink:#1B1206;--sage:#7FA08D;--card:#1D1B14;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    padding-inline:24px;margin:0;
+  }
+  a{color:var(--accent);}
+  .wrap{max-width:760px;margin-inline:auto;}
+  header.site{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-block:22px;border-bottom:1px solid var(--line);gap:16px;flex-wrap:wrap;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;}
+  .brand .mark{width:30px;height:30px;flex:none;}
+  nav.site{display:flex;gap:22px;font-size:0.92rem;color:var(--ink-soft);}
+  nav.site a{text-decoration:none;}
+  nav.site a:hover{color:var(--accent);}
+
+  main{padding-block:44px 60px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.14em;
+    text-transform:uppercase;color:var(--sage);margin:0 0 12px;
+  }
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.1;margin:0 0 10px;text-wrap:balance;}
+  .stand{color:var(--ink-soft);font-size:0.92rem;margin:0 0 40px;}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;margin:38px 0 12px;}
+  h3{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:0.95rem;margin:26px 0 8px;color:var(--sage);}
+  p,li{line-height:1.65;color:var(--ink);}
+  p{margin:0 0 14px;}
+  ul{margin:0 0 14px;padding-left:22px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px;margin:20px 0;
+  }
+  .card p:last-child{margin:0;}
+  footer.site{
+    padding-block:34px 46px;border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+    font-size:0.86rem;color:var(--ink-soft);
+  }
+  footer.site nav{display:flex;gap:18px;}
+  footer.site a{text-decoration:none;color:inherit;}
+  footer.site a:hover{color:var(--accent);}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.hero-app{display:flex;gap:18px;align-items:center;margin:0 0 22px;}
+.app-icon{width:72px;height:72px;border-radius:18px;background:linear-gradient(155deg,var(--accent),#8B3D14);display:flex;align-items:center;justify-content:center;color:var(--accent-ink);font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:1.3rem;flex:none;}
+.pill{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.04em;padding:4px 9px;border-radius:99px;background:var(--card);border:1px solid var(--line);color:var(--ink-soft);display:inline-block;margin:0 6px 6px 0;}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:18px 0;}
+.feature-grid .card{margin:0;}
+.feature-grid h3{margin-top:0;}
+.tip{border-left:4px solid var(--accent);}
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<div class="wrap">
+
+  <header class="site">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 32 32" fill="none">
+        <rect x="1" y="1" width="30" height="30" rx="8" fill="var(--accent)"/>
+        <text x="16" y="21" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="700" font-size="13" fill="var(--accent-ink)">MA</text>
+      </svg>
+      Mein Auftritt
+    </div>
+    <nav class="site">
+      <a href="index.html">Start</a>
+      <a href="index.html#apps">Apps</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero-app"><div class="app-icon">Ow</div><div><p class="eyebrow" style="margin:0 0 6px">App für iPhone &amp; iPad</p><h1 style="margin:0">Owlreader byMA</h1></div></div>
+    <p style="font-size:1.08rem;color:var(--ink-soft);max-width:56ch">Hörbücher hören und E-Books vorlesen lassen – mit natürlicher Sprachausgabe und einem Sleep-Timer, der beim Einschlafen deine Stelle merkt.</p>
+    <p><span class="pill">iOS 17+</span><span class="pill">iPhone</span><span class="pill">iPad</span><span class="pill">Apple Watch</span><span class="pill">Deutsch &amp; Englisch</span></p>
+
+    <h2>Was die App kann</h2>
+    <div class="feature-grid">
+      <div class="card"><h3>Bibliothek</h3><p>EPUB, PDF und TXT importieren. Fortschritt, „Weiterhören“ und Lesezeichen mit Datum und Uhrzeit behalten den Überblick.</p></div>
+      <div class="card"><h3>Vorlesen</h3><p>Der aktuelle Absatz scrollt mit, das gerade gesprochene Wort wird farbig hervorgehoben. Vor- und Zurück springen absatzweise.</p></div>
+      <div class="card"><h3>Zwei Stimmen-Welten</h3><p>Apple-Stimmen laufen offline und kostenlos. Optional lässt sich der Cloud-Dienst ElevenLabs für besonders natürliche Stimmen zuschalten (eigener API-Schlüssel nötig).</p></div>
+      <div class="card"><h3>Sleep-Timer</h3><p>Fester Countdown oder „Ende des Kapitels“. Beim Start legt die App automatisch ein Lesezeichen an – so findest du am nächsten Tag zurück.</p></div>
+      <div class="card"><h3>Scans &amp; Fotos</h3><p>Eingescannte oder abfotografierte PDF-Seiten liest die App per Texterkennung direkt auf dem Gerät aus.</p></div>
+      <div class="card"><h3>Kopfhörer &amp; Watch</h3><p>Ausgabe auf gekoppelte Bluetooth-Kopfhörer, AirPods oder AirPlay-Geräte wählen; Begleit-App für die Apple Watch.</p></div>
+    </div>
+
+    <h2>Preis</h2>
+    <div class="card"><p><strong>3 Monate kostenlos testen</strong>, danach einmalige Freischaltung per In-App-Kauf (ca. 9,99 €). Kein Abo. Die Abwicklung erfolgt über den App Store; der Kauf lässt sich auf jedem Gerät mit derselben Apple-ID wiederherstellen.</p></div>
+
+    <h2 id="tipps">Erste Tipps &amp; Tricks</h2>
+    <div class="card tip"><h3>Bessere Apple-Stimmen laden</h3><p>Für gute Sprachqualität vorab in den iOS-Einstellungen unter „Bedienungshilfen → Gesprochene Inhalte → Stimmen“ eine Stimme in Enhanced- oder Premium-Qualität laden. Ein direkter Sprung dorthin ist aus Apps heraus technisch nicht möglich.</p></div>
+    <div class="card tip"><h3>Natürlichere Stimme mit ElevenLabs</h3><p>Konto auf elevenlabs.io anlegen, unter „API Keys“ einen Schlüssel erstellen und dabei mindestens die Berechtigungen „Text to Speech“ und „Voices“ freischalten. Schlüssel in der App unter Einstellungen → ElevenLabs einfügen, Stimme wählen und oben die Sprachengine auf „ElevenLabs“ stellen.</p></div>
+    <div class="card tip"><h3>Bücher aus Kindle &amp; Co.</h3><p>Die App liest EPUB, PDF und TXT. Die integrierte Hilfe („Hilfe &amp; Anleitung“ auf der Startseite der App) erklärt Import, Bereinigung und weitere Kniffe Schritt für Schritt.</p></div>
+
+    <h2>Datenschutz in Kürze</h2>
+    <p>Bibliothek, Fortschritt und Lesezeichen bleiben auf deinem Gerät. Nur wenn du die optionale Cloud-Sprachausgabe (ElevenLabs) nutzt, werden die jeweils vorzulesenden Textabschnitte an ElevenLabs übertragen. Kein Tracking, keine Werbung. Details: <a href="privacy.html#owlreader">Datenschutzerklärung</a>.</p>
+
+    <h2>Support</h2>
+    <p>Fragen, Fehler oder Wünsche? Schreib an <a href="mailto:familie.haermeyer@icloud.com?subject=Owlreader%20byMA">familie.haermeyer@icloud.com</a> – Betreff „Owlreader byMA“.</p>
+  </main>
+
+  <footer class="site">
+    <span>© 2026 Mein Auftritt · Jürgen Haermeyer</span>
+    <nav>
+      <a href="index.html">Start</a>
+      <a href="mailto:familie.haermeyer@icloud.com">Kontakt</a>
+    </nav>
+  </footer>
+
+</div>
+</body>
+</html>
