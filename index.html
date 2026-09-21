@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mein Auftritt</title>
+<meta name="description" content="Mein Auftritt – Ein-Personen-Studio für iOS-Apps von Jürgen Haermeyer. Aktuell: Numberflow byMA.">
+</head>
+<body>
+<style>
+  :root{
+    --paper:#F6F2E9;
+    --ink:#1B1B18;
+    --ink-soft:#5B5750;
+    --line:#DDD5C4;
+    --accent:#C9612B;
+    --accent-ink:#FFF7EE;
+    --sage:#4E6B5C;
+    --card:#FFFFFF;
+    --shadow: 0 1px 0 rgba(27,27,24,0.06);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#15140F;
+      --ink:#F2EEE3;
+      --ink-soft:#B8B0A0;
+      --line:#332F26;
+      --accent:#E8873E;
+      --accent-ink:#1B1206;
+      --sage:#7FA08D;
+      --card:#1D1B14;
+      --shadow: 0 1px 0 rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#15140F;
+    --ink:#F2EEE3;
+    --ink-soft:#B8B0A0;
+    --line:#332F26;
+    --accent:#E8873E;
+    --accent-ink:#1B1206;
+    --sage:#7FA08D;
+    --card:#1D1B14;
+    --shadow: 0 1px 0 rgba(0,0,0,0.4);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    padding-inline:24px;
+    margin:0;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1040px;margin-inline:auto;}
+
+  header.site{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-block:22px;
+    border-bottom:1px solid var(--line);
+    gap:16px;flex-wrap:wrap;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;letter-spacing:0.01em;}
+  .brand .mark{width:30px;height:30px;flex:none;}
+  nav.site{display:flex;gap:22px;font-size:0.92rem;color:var(--ink-soft);}
+  nav.site a{text-decoration:none;}
+  nav.site a:hover{color:var(--accent);}
+
+  .hero{
+    padding-block:64px 40px;
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center;
+  }
+  @media (max-width:760px){ .hero{grid-template-columns:1fr;padding-block:40px 24px;} }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--sage);margin:0 0 14px;
+  }
+  h1{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:clamp(2.1rem,4.4vw,3.4rem);
+    line-height:1.06;
+    letter-spacing:-0.01em;
+    margin:0 0 18px;
+    text-wrap:balance;
+  }
+  .lead{
+    font-size:1.08rem;
+    line-height:1.6;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin:0;
+  }
+
+  .chainviz{
+    aspect-ratio:1/1;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    padding:18px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows:repeat(4,1fr);
+    gap:8px;
+  }
+  .cell{
+    border-radius:8px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:clamp(0.75rem,2vw,1.05rem);
+    background:var(--paper);
+    color:var(--ink-soft);
+    border:1px solid var(--line);
+    font-variant-numeric:tabular-nums;
+  }
+  .cell.on{
+    background:var(--accent);
+    color:var(--accent-ink);
+    border-color:var(--accent);
+  }
+
+  section{padding-block:44px;border-top:1px solid var(--line);}
+  h2{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:1.6rem;
+    margin:0 0 8px;
+  }
+  .section-lead{color:var(--ink-soft);max-width:60ch;margin:0 0 28px;line-height:1.55;}
+
+  .apps-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+  }
+  .app-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:22px;
+    box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .app-icon{
+    width:52px;height:52px;border-radius:13px;
+    background:linear-gradient(155deg,var(--accent),#8B3D14);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--accent-ink);font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:1rem;
+    flex:none;
+  }
+  .app-card h3{font-family:'Fraunces',serif;font-size:1.15rem;margin:0;font-weight:600;}
+  .app-card p{margin:0;color:var(--ink-soft);font-size:0.94rem;line-height:1.5;flex:1;}
+  .app-meta{display:flex;gap:8px;flex-wrap:wrap;}
+  .pill{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;letter-spacing:0.04em;
+    padding:4px 9px;border-radius:99px;
+    background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);
+  }
+  .app-links{display:flex;gap:14px;font-size:0.88rem;margin-top:4px;}
+  .app-links a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;}
+  .app-links a:hover{text-decoration-color:var(--accent);color:var(--accent);}
+
+  .app-card.next{
+    border-style:dashed;
+    justify-content:center;align-items:flex-start;
+    color:var(--ink-soft);
+  }
+  .app-card.next h3{color:var(--ink-soft);}
+
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+  @media (max-width:760px){ .about-grid{grid-template-columns:1fr;} }
+  .about-grid p{line-height:1.6;color:var(--ink-soft);}
+
+  footer.site{
+    padding-block:34px 46px;
+    border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;
+    gap:16px;flex-wrap:wrap;
+    font-size:0.86rem;color:var(--ink-soft);
+  }
+  footer.site nav{display:flex;gap:18px;}
+  footer.site a{text-decoration:none;}
+  footer.site a:hover{color:var(--accent);}
+
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<div class="wrap">
+
+  <header class="site">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 32 32" fill="none">
+        <rect x="1" y="1" width="30" height="30" rx="8" fill="var(--accent)"/>
+        <text x="16" y="21" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="700" font-size="13" fill="var(--accent-ink)">MA</text>
+      </svg>
+      Mein Auftritt
+    </div>
+    <nav class="site">
+      <a href="#apps">Apps</a>
+      <a href="#studio">Studio</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="privacy.html">Datenschutz</a>
+    </nav>
+  </header>
+
+  <section class="hero" style="border-top:none;">
+    <div>
+      <p class="eyebrow">App-Entwicklung</p>
+      <h1>Kleine, durchdachte Apps für den Alltag.</h1>
+      <p class="lead">Mein Auftritt ist das Ein-Personen-Studio von Jürgen Haermeyer. Hier entstehen iOS-Apps, die einen klaren Zweck lösen – ohne unnötigen Schnickschnack.</p>
+    </div>
+    <div class="chainviz" aria-hidden="true">
+      <div class="cell">4</div><div class="cell">8</div><div class="cell on">2</div><div class="cell">4</div>
+      <div class="cell on">2</div><div class="cell on">2</div><div class="cell">16</div><div class="cell">8</div>
+      <div class="cell">8</div><div class="cell on">4</div><div class="cell on">4</div><div class="cell">32</div>
+      <div class="cell">4</div><div class="cell">16</div><div class="cell on">8</div><div class="cell on">8</div>
+    </div>
+  </section>
+
+  <section id="apps">
+    <h2>Apps</h2>
+    <p class="section-lead">Aktuell in Entwicklung – hier finden künftige Apps ihren Platz.</p>
+    <div class="apps-grid">
+      <div class="app-card">
+        <div class="app-icon">Nf</div>
+        <h3>Numberflow byMA</h3>
+        <p>Verbinde gleiche und doppelte Zahlen in alle acht Richtungen und erzeuge immer größere Werte. Ein Logik- und Kombinationsspiel für iPhone.</p>
+        <div class="app-meta">
+          <span class="pill">iOS</span>
+          <span class="pill">Puzzle</span>
+          <span class="pill">In Kürze im App Store</span>
+        </div>
+        <div class="app-links">
+          <a href="privacy.html#numberflow">Datenschutz</a>
+        </div>
+      </div>
+      <div class="app-card next">
+        <h3>Weitere App</h3>
+        <p>Die nächste App von Mein Auftritt entsteht bereits. Details folgen.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="studio">
+    <h2>Studio</h2>
+    <div class="about-grid">
+      <p>Mein Auftritt entwickelt native iOS-Apps – von der ersten Idee über das Design bis zur Veröffentlichung im App Store. Der Fokus liegt auf einfachen, klar strukturierten Anwendungen, die genau das tun, was sie versprechen.</p>
+      <p>Hinter Mein Auftritt steht Jürgen Haermeyer. Jede App wird eigenständig konzipiert, umgesetzt und betreut – mit kurzen Wegen und direktem Kontakt bei Fragen oder Feedback.</p>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <p class="section-lead">Fragen, Feedback oder Support zu einer App? Einfach melden.</p>
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:1rem;">
+      <a href="mailto:familie.haermeyer@icloud.com">familie.haermeyer@icloud.com</a>
+    </p>
+  </section>
+
+  <footer class="site">
+    <span>© 2026 Mein Auftritt · Jürgen Haermeyer</span>
+    <nav>
+      <a href="privacy.html">Datenschutz</a>
+      <a href="mailto:familie.haermeyer@icloud.com">Kontakt</a>
+    </nav>
+  </footer>
+
+</div>
+</body>
+</html>
