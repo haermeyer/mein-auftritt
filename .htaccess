@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^(?:www\.)?mein-auftritt\.de$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^mein-auftritt\.com$ [NC]
+RewriteRule ^ https://www.mein-auftritt.com%{REQUEST_URI} [R=301,L]
